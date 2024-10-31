@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.139,D:\Program\Rename\ExifTools.h=D:\Program\Rename\ExifUtils.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.892,D:\Program\ReName\Unit1.h=D:\Program\ReName\Main.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.821,D:\Program\Rename\Unit1.h=D:\Program\Rename\ExifTools.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.656,D:\Program\Rename\Unit1.h=D:\Program\Rename\Utils.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.755,D:\Program\ReName\Main.cpp=D:\Program\Rename\Main.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.839,D:\Program\ReName\Project1.cbproj=D:\Program\ReName\ReName.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.139,D:\Program\Rename\ExifTools.cpp=D:\Program\Rename\ExifUtils.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.976,D:\Program\ReName\ReName.cbproj=D:\Program\Rename\ReName.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.892,D:\Program\ReName\Unit1.dfm=D:\Program\ReName\Main.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.962,=D:\Program\Rename\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.755,D:\Program\ReName\Main.h=D:\Program\Rename\Main.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.834,D:\Program\ReName\Project1PCH1.h=D:\Program\ReName\ReNamePCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.968,=D:\Program\ReName\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.755,D:\Program\ReName\Main.dfm=D:\Program\Rename\Main.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.656,D:\Program\Rename\Unit1.cpp=D:\Program\Rename\Utils.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.597,=D:\Program\Rename\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.030,=D:\Program\ReName\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.821,D:\Program\Rename\Unit1.cpp=D:\Program\Rename\ExifTools.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.892,D:\Program\ReName\Unit1.cpp=D:\Program\ReName\Main.cpp</Transaction>
+  </Transactions>
+</BorlandProject>
