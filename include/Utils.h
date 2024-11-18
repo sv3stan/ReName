@@ -42,7 +42,7 @@ struct NewData
     System::TDateTime newDateCreated; // Новая дата создания
     System::TDateTime newDateModified; // Новая дата модификации
     System::TDateTime newDateOpened; // Новая дата открытия
-    System::TDateTime newDatePhoto; // Новая дата фото
+    System::TDateTime newDateOriginal; // Новая дата фото
     System::UnicodeString newAttribute; // Новый атрибут
     System::UnicodeString newName; // Новое имя
 };
@@ -67,16 +67,31 @@ struct FullItemData
     ExifData exifData;
 };
 
+extern void InitGlobalFormatSettings();
+extern std::unordered_map<System::UnicodeString, FullItemData> itemMap;
+
 // Функция для обработки информации о выбранном файле
 void ProcessSelectedFile(
     TListItem* selectedItem, TForm1* form, TJvImage* image);
 void storeDraggedFilesToMap(TStrings* Value);
-void fromMapToStoreListView(TJvListView* jvListView, TStrings* value);
-void ProcessFolder(
-    const UnicodeString &folderPath, TListItems* items);
-extern void InitGlobalFormatSettings();
+void fromMapToStoreListView(TJvListView* jvListView);
+void ProcessFolder(const UnicodeString &folderPath, TListItems* items);
 
-std::unordered_map<System::UnicodeString, FullItemData> itemMap;
+TDateTime parseDateFromFileName(const System::UnicodeString &fileName);
+bool setChangedFileDateTime(const UnicodeString &filePath,
+    const UnicodeString &fileName);
+bool StringToSystemTime(const String &dateTimeStr, SYSTEMTIME &systemTime);
+int GetEncoderClsid(const WCHAR* format, CLSID* pClsid);
+AnsiString DateTimeToExifFormat(const TDateTime &dateTime);
+bool SetExifDateTimeOriginal(const UnicodeString &filePath,
+    const UnicodeString &fileName, const TDateTime &newDate);
+bool TDateTimeToFileTime(const TDateTime &dateTime, FILETIME &fileTime);
+void ApplyFilenameToDate(TListView* listView);
+void GetFileCreationDateTime(TListView* listView);
+void parseNewNameFromFileDateTime(
+        System::TDateTime dateTime,
+    UnicodeString &formattedDate,
+    UnicodeString &formattedTime);
 
 #endif // UTILS_H
 

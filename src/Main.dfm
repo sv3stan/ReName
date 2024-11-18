@@ -1,10 +1,11 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 669
+  Caption = 'ReName'
+  ClientHeight = 744
   ClientWidth = 1131
   Color = clBtnFace
+  TransparentColorValue = clBtnFace
   DragMode = dmAutomatic
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -41,11 +42,12 @@ object Form1: TForm1
   TextHeight = 15
   object JvPanel1: TJvPanel
     Left = 0
-    Top = 644
+    Top = 719
     Width = 1131
     Height = 25
     Align = alBottom
     TabOrder = 0
+    ExplicitTop = 644
     object JvStatusBar1: TJvStatusBar
       Left = 1
       Top = 1
@@ -54,22 +56,23 @@ object Form1: TForm1
       Align = alClient
       Panels = <
         item
-          Text = #1042#1089#1077#1075#1086' '#1092#1072#1081#1083#1086#1074':'
+          Text = 'Total files :'
           Width = 420
         end
         item
-          Text = #1054#1090#1084#1077#1095#1077#1085#1086':'
+          Text = 'Selected :'
           Width = 80
         end>
     end
   end
   object JvxSplitter1: TJvxSplitter
     Left = 0
-    Top = 641
+    Top = 716
     Width = 1131
     Height = 3
     ControlFirst = JvPanel1
     Align = alBottom
+    ExplicitTop = 641
   end
   object JvPanel2: TJvPanel
     Left = 0
@@ -90,32 +93,36 @@ object Form1: TForm1
   object JvPanel3: TJvPanel
     Left = 0
     Top = 44
-    Width = 185
-    Height = 597
+    Width = 105
+    Height = 672
     Align = alLeft
     TabOrder = 4
+    ExplicitHeight = 597
   end
   object JvxSplitter3: TJvxSplitter
-    Left = 185
+    Left = 105
     Top = 44
     Width = 3
-    Height = 597
+    Height = 672
     ControlFirst = JvPanel3
     Align = alLeft
+    ExplicitHeight = 597
   end
   object JvPanel4: TJvPanel
     Left = 920
     Top = 44
     Width = 211
-    Height = 597
+    Height = 672
     Align = alRight
     TabOrder = 6
-    object JvTransparentButton1: TJvTransparentButton
+    ExplicitHeight = 597
+    object Filename_To_Date_Button_: TJvTransparentButton
       Left = 159
       Top = 81
       Width = 40
       Height = 40
       Caption = 'OK'
+      OnClick = Filename_To_Date_Button_Click
     end
     object JvTransparentButton2: TJvTransparentButton
       Left = 159
@@ -123,6 +130,7 @@ object Form1: TForm1
       Width = 40
       Height = 40
       Caption = 'OK'
+      OnClick = JvTransparentButton2Click
     end
     object JvTransparentButton3: TJvTransparentButton
       Left = 159
@@ -150,7 +158,7 @@ object Form1: TForm1
         'Date create'
         'Date modified'
         'Date access'
-        'Photo date')
+        'Original date')
       TabOrder = 0
     end
     object JvGroupBox1: TJvGroupBox
@@ -208,9 +216,9 @@ object Form1: TForm1
       object JvCheckBox1: TJvCheckBox
         Left = 16
         Top = 20
-        Width = 80
+        Width = 87
         Height = 17
-        Caption = 'Date create'
+        Caption = 'Date created'
         TabOrder = 0
         OnClick = JvCheckBox1Click
         LinkedControls = <>
@@ -228,9 +236,9 @@ object Form1: TForm1
       object JvCheckBox3: TJvCheckBox
         Left = 16
         Top = 66
-        Width = 82
+        Width = 88
         Height = 17
-        Caption = 'Date access'
+        Caption = 'Date opened'
         TabOrder = 2
         OnClick = JvCheckBox3Click
         LinkedControls = <>
@@ -238,9 +246,9 @@ object Form1: TForm1
       object JvCheckBox4: TJvCheckBox
         Left = 16
         Top = 89
-        Width = 79
+        Width = 89
         Height = 17
-        Caption = 'Photo date'
+        Caption = 'Original date'
         TabOrder = 3
         OnClick = JvCheckBox4Click
         LinkedControls = <>
@@ -251,22 +259,24 @@ object Form1: TForm1
     Left = 917
     Top = 44
     Width = 3
-    Height = 597
+    Height = 672
     ControlFirst = JvPanel4
     Align = alRight
+    ExplicitHeight = 597
   end
   object JvPanel5: TJvPanel
-    Left = 188
+    Left = 108
     Top = 44
-    Width = 729
-    Height = 597
+    Width = 809
+    Height = 672
     Align = alClient
     TabOrder = 8
+    ExplicitHeight = 597
     object JvPanel6: TJvPanel
       Left = 1
-      Top = 540
-      Width = 727
-      Height = 56
+      Top = 544
+      Width = 807
+      Height = 127
       Align = alBottom
       TabOrder = 0
       object JvCheckBox9: TJvCheckBox
@@ -275,17 +285,48 @@ object Form1: TForm1
         Width = 77
         Height = 17
         Caption = 'Show path'
-        Checked = True
-        State = cbChecked
         TabOrder = 0
         OnClick = JvCheckBox9Click
         LinkedControls = <>
+      end
+      object DateTemplateEdit: TJvEdit
+        Left = 152
+        Top = 6
+        Width = 121
+        Height = 23
+        TabOrder = 1
+        Text = 'DateTemplateEdit'
+        OnChange = DateTemplateEditChange
+      end
+      object JvEdit2: TJvEdit
+        Left = 320
+        Top = 6
+        Width = 121
+        Height = 23
+        TabOrder = 2
+        Text = 'JvEdit2'
+      end
+      object FormattedDateEdit: TJvEdit
+        Left = 152
+        Top = 35
+        Width = 121
+        Height = 23
+        TabOrder = 3
+        Text = 'FormattedDateEdit'
+      end
+      object JvEdit4: TJvEdit
+        Left = 320
+        Top = 35
+        Width = 121
+        Height = 23
+        TabOrder = 4
+        Text = 'JvEdit4'
       end
     end
     object JvPanel7: TJvPanel
       Left = 1
       Top = 1
-      Width = 727
+      Width = 807
       Height = 176
       Align = alTop
       TabOrder = 1
@@ -320,9 +361,9 @@ object Form1: TForm1
       object Label4: TLabel
         Left = 29
         Top = 85
-        Width = 65
+        Width = 72
         Height = 15
-        Caption = 'Date create :'
+        Caption = 'Date created :'
       end
       object Label5: TLabel
         Left = 29
@@ -334,9 +375,9 @@ object Form1: TForm1
       object Label6: TLabel
         Left = 29
         Top = 125
-        Width = 60
+        Width = 73
         Height = 15
-        Caption = 'Date open :'
+        Caption = 'Date opened :'
       end
       object Label2: TLabel
         Left = 29
@@ -410,7 +451,7 @@ object Form1: TForm1
         Visible = False
       end
       object JvImage1: TJvImage
-        Left = 534
+        Left = 614
         Top = 1
         Width = 192
         Height = 174
@@ -497,74 +538,90 @@ object Form1: TForm1
     object JvxSplitter5: TJvxSplitter
       Left = 1
       Top = 177
-      Width = 727
+      Width = 807
       Height = 3
       ControlFirst = JvPanel7
       Align = alTop
     end
     object JvxSplitter6: TJvxSplitter
       Left = 1
-      Top = 537
-      Width = 727
+      Top = 541
+      Width = 807
       Height = 3
       ControlFirst = JvPanel6
       Align = alBottom
+      ExplicitTop = 537
     end
     object JvPanel8: TJvPanel
       Left = 1
       Top = 180
-      Width = 727
-      Height = 357
+      Width = 807
+      Height = 361
       Align = alClient
       TabOrder = 4
+      ExplicitHeight = 357
       object JvListView1: TJvListView
         Left = 1
         Top = 1
-        Width = 725
-        Height = 355
+        Width = 805
+        Height = 359
         Align = alClient
+        Checkboxes = True
         Columns = <
           item
-            AutoSize = True
-            Caption = 'Path'
-          end
-          item
-            AutoSize = True
             Caption = 'Name'
+            Width = 200
           end
           item
             Caption = 'New name'
+            Width = 200
+          end
+          item
+            Caption = 'Path'
             Width = 0
           end
           item
-            AutoSize = True
+            Alignment = taCenter
             Caption = 'Size'
+            Width = 60
           end
           item
+            Alignment = taCenter
             Caption = 'Date create'
+            Width = 120
           end
           item
+            Alignment = taCenter
             Caption = 'New date create'
             Width = 0
           end
           item
+            Alignment = taCenter
             Caption = 'Date modified'
+            Width = 120
           end
           item
+            Alignment = taCenter
             Caption = 'New date modified'
             Width = 0
           end
           item
+            Alignment = taCenter
             Caption = 'Date open'
+            Width = 120
           end
           item
+            Alignment = taCenter
             Caption = 'New date open'
             Width = 0
           end
           item
+            Alignment = taCenter
             Caption = 'Date original'
+            Width = 120
           end
           item
+            Alignment = taCenter
             Caption = 'New date original'
             Width = 0
           end
@@ -574,6 +631,7 @@ object Form1: TForm1
             Width = 60
           end
           item
+            Alignment = taCenter
             Caption = 'New attribute'
             Width = 0
           end>
@@ -586,13 +644,16 @@ object Form1: TForm1
         RowSelect = True
         ParentDoubleBuffered = False
         ParentShowHint = False
+        PopupMenu = JvPopupMenu1
         ShowHint = True
         TabOrder = 0
         ViewStyle = vsReport
+        OnCustomDrawItem = JvListView1CustomDrawItem
+        OnCustomDrawSubItem = JvListView1CustomDrawSubItem
         OnSelectItem = JvListView1SelectItem
         ColumnsOrder = 
-          '0=0,1=153,2=0,3=153,4=50,5=0,6=50,7=0,8=50,9=0,10=50,11=0,12=60,' +
-          '13=0'
+          '0=200,1=200,2=0,3=60,4=120,5=0,6=120,7=0,8=120,9=0,10=120,11=0,1' +
+          '2=60,13=0'
         OnBeginColumnResize = JvListView1BeginColumnResize
         ExtendedColumns = <
           item
@@ -623,23 +684,186 @@ object Form1: TForm1
           end
           item
           end>
+        ExplicitHeight = 355
       end
     end
   end
   object JvDragDrop1: TJvDragDrop
     DropTarget = JvListView1
     OnDrop = JvDragDrop1Drop
-    Left = 80
-    Top = 508
+    Left = 40
+    Top = 324
   end
   object JvBrowseForFolderDialog1: TJvBrowseForFolderDialog
-    Left = 80
-    Top = 244
+    Left = 40
+    Top = 188
   end
   object JvOpenDialog1: TJvOpenDialog
     Height = 0
     Width = 0
-    Left = 88
-    Top = 356
+    Left = 40
+    Top = 260
+  end
+  object JvTimer1: TJvTimer
+    OnTimer = JvTimer1Timer
+    Left = 40
+    Top = 124
+  end
+  object JvPopupMenu1: TJvPopupMenu
+    ImageMargin.Left = 0
+    ImageMargin.Top = 0
+    ImageMargin.Right = 0
+    ImageMargin.Bottom = 0
+    ImageSize.Height = 0
+    ImageSize.Width = 0
+    Left = 45
+    Top = 400
+    object N15: TMenuItem
+      Caption = 'Mark'
+      object Mark_Selected_: TMenuItem
+        Caption = 'Mark selected'
+        OnClick = Mark_Selected_Click
+      end
+      object Unmark_Selected_: TMenuItem
+        Caption = 'Unmark selected'
+        OnClick = Unmark_Selected_Click
+      end
+      object Mark_All_: TMenuItem
+        Caption = 'Mark all'
+        OnClick = Mark_All_Click
+      end
+      object Unmark_All_: TMenuItem
+        Caption = 'Unmark all'
+        OnClick = Unmark_All_Click
+      end
+      object Invert_Marked_: TMenuItem
+        Caption = 'Invert marked'
+        OnClick = Invert_Marked_Click
+      end
+    end
+    object N5: TMenuItem
+      Caption = '-'
+      GroupIndex = 1
+    end
+    object N14: TMenuItem
+      Caption = 'Select'
+      GroupIndex = 1
+      object Select_All_: TMenuItem
+        Caption = 'Select all'
+        OnClick = Select_All_Click
+      end
+      object Deselect_All_: TMenuItem
+        Caption = 'Deselect all'
+        OnClick = Deselect_All_Click
+      end
+      object Invert_Selection_: TMenuItem
+        Caption = ' Invert selection'
+        OnClick = Invert_Selection_Click
+      end
+    end
+    object N4: TMenuItem
+      Caption = '-'
+      GroupIndex = 1
+    end
+    object N22: TMenuItem
+      Caption = 'Actions'
+      GroupIndex = 1
+      object Filename_To_Date_: TMenuItem
+        Caption = 'Filename to date'
+        OnClick = Filename_To_Date_Click
+      end
+      object N24: TMenuItem
+        Caption = 'Date to filename'
+      end
+      object N25: TMenuItem
+        Caption = 'Attributes'
+      end
+      object N26: TMenuItem
+        Caption = 'Custom date'
+      end
+    end
+    object N3: TMenuItem
+      Caption = '-'
+      GroupIndex = 1
+    end
+    object Insert_: TMenuItem
+      Caption = 'Insert'
+      GroupIndex = 1
+      ShortCut = 45
+      OnClick = Insert_Click
+    end
+    object Delete_: TMenuItem
+      Caption = 'Delete'
+      GroupIndex = 1
+      ShortCut = 46
+      OnClick = Delete_Click
+    end
+    object Delete_All_: TMenuItem
+      Caption = 'Delete all'
+      GroupIndex = 1
+      ShortCut = 8238
+      OnClick = Delete_All_Click
+    end
+    object N21: TMenuItem
+      Caption = '-'
+      GroupIndex = 1
+    end
+    object Open_With_: TMenuItem
+      Caption = 'Open with...'
+      GroupIndex = 1
+      OnClick = Open_With_Click
+    end
+    object Properties_: TMenuItem
+      Caption = 'Properties'
+      GroupIndex = 1
+      OnClick = Properties_Click
+    end
+    object Open_File_Location_: TMenuItem
+      Caption = 'Open file location'
+      GroupIndex = 1
+      OnClick = Open_File_Location_Click
+    end
+    object N30: TMenuItem
+      Caption = '-'
+      GroupIndex = 1
+    end
+    object N33: TMenuItem
+      Caption = 'Show columns'
+      GroupIndex = 1
+      object N37: TMenuItem
+        Caption = 'Name'
+      end
+      object N36: TMenuItem
+        Caption = 'Path'
+      end
+      object N38: TMenuItem
+        Caption = 'Size'
+      end
+      object N39: TMenuItem
+        Caption = 'Date creation'
+      end
+      object Datemodified1: TMenuItem
+        Caption = 'Date modified'
+      end
+      object Dateopened1: TMenuItem
+        Caption = 'Date opened'
+      end
+      object Dateoriginal1: TMenuItem
+        Caption = 'Date original'
+      end
+      object Attribute1: TMenuItem
+        Caption = 'Attribute'
+      end
+    end
+    object N34: TMenuItem
+      Caption = '-'
+      GroupIndex = 1
+    end
+    object Refresh_: TMenuItem
+      Caption = 'Refresh'
+      GroupIndex = 1
+      ShortCut = 116
+      OnClick = Refresh_Click
+    end
   end
 end
